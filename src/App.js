@@ -7,6 +7,8 @@ import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-rou
 import createSagaMiddleware from 'redux-saga';
 import firebase from 'firebase';
 import { Map } from 'immutable';
+import { DragDropContext } from 'react-dnd'
+import Html5Backend from 'react-dnd-html5-backend'
 
 import actions from 'api/actions';
 import apiReducers from 'api/reducers';
@@ -74,4 +76,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default DragDropContext(Html5Backend)(App);

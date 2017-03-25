@@ -1,0 +1,12 @@
+.my-card-container .mdc-card {
+  height: 350px;
+  width: 350px;
+}
+
+.card-red {
+    color: red;
+}
+
+.card-green {
+    color: green;
+}

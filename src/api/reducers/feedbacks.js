@@ -1,4 +1,5 @@
 import { fromJS } from 'immutable';
+import actions from 'api/actions'
 
 const initialState = fromJS({
   invites: {
@@ -92,6 +93,11 @@ const initialState = fromJS({
             123218384: {
               description: 'Se for pra começar meu filho, acabe o que fez.'
             }
+          },
+          positives: {
+            23323339: {
+              description: 'Dá pra manter a amizade no face.'
+            }
           }
         }
       },
@@ -128,6 +134,11 @@ const initialState = fromJS({
                 123218384: {
                   description: 'Se for pra começar meu filho, acabe o que fez.'
                 }
+              },
+              positives: {
+                23323339: {
+                  description: 'Dá pra manter a amizade no face.'
+                }
               }
             }
           }
@@ -161,7 +172,12 @@ const initialState = fromJS({
   }
 });
 
-export default (state = initialState, action) => {
+export default (state = initialState, { type, payload }) => {
+
+  switch (type) {
+    case 'dropNegative': state.mergeIn(
+      ['feedbacks', '1239987365', 'okrs', '23442344323', 'feedbacks', '123218381', 'negatives'], payload)
+  }
 
   return state;
 }
